@@ -44,7 +44,7 @@ st.write("### (2) add a multi-select for Sub_Category *in the selected Category 
 
 multi_options = st.multiselect(
     "Select Subcategories (if applicable)",
-    cat_df['Sub_Category'],
+    cat_df['Sub_Category'].unique(),
 )
 
 st.write("You selected:", multi_options)

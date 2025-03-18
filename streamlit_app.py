@@ -49,6 +49,7 @@ multi_options = st.multiselect(
 
 st.write("You selected:", multi_options)
 multi_df = cat_df[cat_df['Sub_Category'].isin(multi_options)]
+sales_by_month = multi_df.filter(items=['Sales']).groupby(pd.Grouper(freq='M')).sum()
 st.write("### (3) show a line chart of sales for the selected items in (2)")
 st.line_chart(multi_df, y="Sales")
 st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")

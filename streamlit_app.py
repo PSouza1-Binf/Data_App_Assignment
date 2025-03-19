@@ -62,7 +62,7 @@ multi_df["Profit_Margin"] = (multi_df["Profit"] / multi_df["Sales"]) * 100
 avg_margin = multi_df["Profit_Margin"].mean()
 avg_margin_all = df["Profit_Margin"].mean()
 delta_margin = avg_margin-avg_margin_all
-st.dataframe(multi_df)
+
 st.metric(label="Total Sales", value= sum_sales)
 st.metric(label="Total Profit", value=sum_profit)
 st.metric(label="Profit Margin", value=avg_margin, delta= delta_margin)
